@@ -1,0 +1,1 @@
+Person : uID, name, city, year_of_birth, email, country, status | Product : zID, category, name, year_of_manufacture, current_price | Branch : pID, city, status | Employee : zaID, pID, name, date_of_birth, salary_grade | Order : oID, uID, created, confirmed, delivered, zaID | Item : oID, zID, price, quantity | Stock : pID, zID, quantity

@@ -1,0 +1,14 @@
+Pro každou pobočku vypište následující údaje:\nPočet různých zboží na skladě.\nSumu cen položek na objednávkách z ledna roku 2019, které mají na starost zaměstnanci z dané pobočky.\nMěsíc a rok objednávky zjistíte pomocí funkcí month(vytvořená) = 1 a year(vytvořená) = 2019.
+Naleznete pobočky, které mají na skladě zboží ‘Cook toend U2’ a ‘Cook Toend trend’.
+Vypište všechny pobočky a u každé z nich vypište počet zboží, které daná pobočka nemá na skladě (tzn. pro dané zboží není záznam v tabulce sklad s danou pobočkou).
+Vypište pobočky, které nemají na skladě ani jedno zboží z kategorie 2.
+Pro každou pobočku vypište zboží, kterého má pobočka na skladě nejvíce kusů. Vypište pID, město, počet kusů a název zboží. Seřaďte podle pID.
+Vypište všechny pobočky a u každé z nich vypište počet zboží, které daná pobočka nemá na skladě (tzn. pro dané zboží není záznam v tabulce sklad s danou pobočkou).
+Vypište pobočky, které nemají na skladě ani jedno zboží s rokem výroby 2010.
+Pro každé zboží vypište pobočku(y), která má zboží na skladě v nejvíce kusech. Vypište zID, název zboží, počet kusů.
+Nalezněte nejstaršího zaměstnance, který v roce 2016 nikdy neměl na zodpovědnost objednávku od osoby z Francie (tzn. takové osoby, kde země = 'France'). Rok objednávky zjistíte pomocí funkce year(vytvořena).
+Vypište zboží s aktuální cenou vyšší než 2000, které není na žádné pobočce se statusem 1.
+Vypište pobočky, které mají na skladě zboží z kategorie 1, 2 i 3. Vypište pID a město pobočky.
+Nalezněte nejmladšího zaměstnance, který v roce 2017 nikdy neměl na zodpovědnost objednávku od osoby z Itálie (tzn. takové osoby, kde země = 'Italy'). Rok objednávky zjistíte pomocí funkce year(vytvořena).
+Vypište zboží s rokem výroby 2010, které není na pobočce ani v Opavě ani v Ostravě.
+Vypište pobočky, které mají na skladě zboží s rokem výroby 2010, 2011 i 2012. Vypište pID a město pobočky.

@@ -1,0 +1,14 @@
+For each branch, list the following information: Number of different products in stock. Sum of prices of items on orders from January 2019, which are taken care of by employees from that branch. The month and year of the order are determined by the functions month(created) = 1 and year(created) = 2019.
+Find branches that have 'Cook toend U2' and 'Cook Toend trend' products in stock.
+List all branches and for each of them, list the number of products that the branch does not have in stock (i.e., for that product there is no record in the stock table with that branch).
+List the branches that do not have any product from category 2 in stock.
+For each branch, list the product that the branch has the most units of in stock. List pID, city, quantity, and product name. Sort by pID.
+List all branches and for each of them, list the number of products that the branch does not have in stock (i.e., for that product there is no record in the stock table with that branch).
+List the branches that do not have any product with the year of manufacture 2010 in stock.
+For each product, list the branch(es) that have the product in stock in the highest quantity. List zID, product name, quantity.
+Find the oldest employee who never had an order from a person from France (i.e., such a person where country = 'France') in 2016. The year of the order is determined by the year(created) function.
+List the products with a current price higher than 2000, which are not at any branch with status 1.
+List the branches that have products from categories 1, 2, and 3 in stock. List pID and city of the branch.
+Find the youngest employee who never had an order from a person from Italy (i.e., such a person where country = 'Italy') in 2017. The year of the order is determined by the year(created) function.
+List the products with the year of manufacture 2010, which are not at the branch either in Opava or in Ostrava.
+List the branches that have products with the years of manufacture 2010, 2011, and 2012 in stock. List pID and city of the branch.

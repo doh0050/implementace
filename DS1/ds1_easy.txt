@@ -1,0 +1,11 @@
+Najdi všechny zaměstnance, kteří se narodily v měsící duben.
+Vypiš názvy všech zboží.
+Vypiš název nejčastěji objednávaného zboží.
+Vypiš název nejčastěji objednávaného zboží. (Takové jaké je obsaženo v nejvíce objednávkách.)
+Vypiš názvy všech poboček a počet jejich zaměstnanců.
+Kolik existuje nedoručených zásilek?
+Kolik existuje nedoručených zásilek? (Datum dorucena je prázdné)
+Vrať všechny objednávky nejstaršího zaměstnance.
+Kolik má pobočka v Ostravě zaměstnanců?
+Kolik má zaměstnanců má pobočka se sídlem v Ostrava?
+Kolik existuje objednávek pro zboží s názvem Easy machine
