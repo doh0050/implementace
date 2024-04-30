@@ -11,7 +11,6 @@ import time
 from tqdm import tqdm
 
 use_new_form =True
-use_new_eval=False
 
 def getTableId(g):
     return g[1]['db_id']
@@ -74,7 +73,7 @@ def run_model_on_questions(model_name,idfrom,idto,spiderdir):#idfrom a idto vče
         use_new_form= False
         from model_scripts import t5_small as c1
     elif  model_name == 'bart_large':
-        ##
+        use_new_form= False
         from model_scripts import bart_large as c1
     elif  model_name == 'gpt2_medium':
         use_new_form= False
@@ -95,29 +94,19 @@ def run_model_on_questions(model_name,idfrom,idto,spiderdir):#idfrom a idto vče
     print("\n\n")
     print(f"Test datasetu spider na modelu {model_name} zahájen")
     qwer=""
-    for g in gen:#tqdm(gen,bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}{postfix}]",total =(idto-idfrom)):
+    for g in tqdm(gen,bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}{postfix}]",total =(idto-idfrom)):
         if i > idto:
             break##ukončení cyklu po poslední otázce  
         if i >= idfrom:
             table_id=getTableId(g)
             if table_id in ['voter_1','world_1']:  #chybějící shéma.sql
                 continue
-            #input_q="TABLES:" + loadTable(table_id) + "\nQUERY:"+ getQuestion(g)
             if (use_new_form== False):
                 input_q="For these TABLES:\n" + loadTable(table_id) + "\nanswer this QUERY: "+ getQuestion(g)
             else:
                 input_q= gq.generate_querry(getQuestion(g),table_id)
             #print(input_q)
-            #result=c1.answer_my_question(input_q)                       #výsledek modelu
-            
-            if qwer != table_id:
-                print(input_q)
-                print()
-            qwer=table_id
-
-            result="SELECT count(name) FROM singer"
-            time.sleep(0.01)
-            
+            result=c1.answer_my_question(input_q)                       #výsledek modelu        
             appendToFile(filename,(g[1]['query'],result,getQuestion(g)),getTableId(g)) #zapsání do souboru kvůli evaluaci
         i+=1
         
@@ -128,18 +117,13 @@ def eval_spider(filename):
 
     eval.myeval(filename)
 
-def new_eval(filename,modelname):
-    import new_eval as neweval
-    neweval.eval_on_file(filename,modelname)
+
 
 def run_full_spider(modelname,idfrom,idto,spiderdir):
     import time
     start=time.time()
     f=run_model_on_questions(modelname,idfrom,idto,spiderdir)
-    if use_new_eval==True:    
-        new_eval(f,modelname) #exec eval for custom questions
-    if use_new_eval ==False:
-        eval_spider(f) #evaluace
+    eval_spider(f) #evaluace
     print("\nMODEL: "+modelname+" <"+str(idfrom)+","+ str(idto)+"> " +"TIME: "+str(time.time() -start))
 
 
